@@ -13,11 +13,15 @@ refs.searchForm.addEventListener('input', search);
 function search(e) {
   e.preventDefault();
   fetchF.query = e.target.value;
+
   console.log(fetchF.searchQuery);
 
   clearGallery();
 
   fetchF.fetchGallery().then(items => {
+    if (items.totalHits <= 0) {
+      alert('пусто');
+    }
     return appendSearchItems(items);
   });
   console.log(fetchF.fetchGallery());
