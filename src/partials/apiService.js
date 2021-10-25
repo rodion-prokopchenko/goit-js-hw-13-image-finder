@@ -1,6 +1,6 @@
 const BASE_URL = 'https://pixabay.com/api/?image_type=photo&orientation=horizontal';
-const KEY = '24010225-df2edab0854d9b7e4a5f74eca';
-
+const KEY = 'key=24010225-df2edab0854d9b7e4a5f74eca';
+// https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=что_искать&page=номер_страницы&per_page=12&key=твой_ключ
 export default class Fetch {
   constructor(searchQuery) {
     this.searchQuery = '';
