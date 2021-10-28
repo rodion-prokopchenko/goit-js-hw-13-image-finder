@@ -8,7 +8,6 @@ const refs = {
   containerGallery: document.querySelector('.gallery'),
   loadMoreButton: document.querySelector('.load-button'),
 };
-console.log(refs.searchForm);
 
 refs.searchForm.addEventListener('input', debounce(search, 500));
 refs.loadMoreButton.addEventListener('click', loadMore);
@@ -25,9 +24,6 @@ function search(e) {
   }
   // или чтобы ---IF(...{})--- забирала микро-функция renderItems?
   searchIsEmpty(e);
-
-  console.log(fetchF.fetchGallery());
-  console.log(refs.containerGallery.children);
 }
 function loadMore() {
   fetchF.pageNumber += 1;
@@ -68,6 +64,7 @@ function appendSearchItems(e) {
 function searchIsEmpty(e) {
   if (e.target.value === '') {
     alert('Введите что-то');
+    disableLoadButton();
   }
 }
 
