@@ -2,7 +2,6 @@ import './sass/main.scss';
 import Fetch from './partials/apiService';
 import galleryItems from './tempates/gallery.hbs';
 import debounce from 'lodash.debounce';
-import 'material-icons/iconfont/material-icons.css';
 const fetchF = new Fetch();
 const refs = {
   searchForm: document.querySelector('.search'),
