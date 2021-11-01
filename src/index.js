@@ -17,12 +17,12 @@ function search(e) {
   fetchF.query = e.target.value;
 
   clearGallery();
-  // как лучше? чтобы ---IF(...){}--- оставался в функции search(e)?
+
   if (e.target.value !== '') {
     renderItems(e);
     unDisableLoadButton();
   }
-  // или чтобы ---IF(...{})--- забирала микро-функция renderItems?
+
   searchIsEmpty(e);
 }
 function loadMore() {
@@ -31,7 +31,7 @@ function loadMore() {
 
   renderItems();
   console.log(refs.containerGallery.lastElementChild);
-  setTimeout(scroll, 550);
+  setTimeout(scroll, 1500);
 }
 
 function scroll() {
